@@ -1,3 +1,4 @@
+var fechaCompleata = "";
 function fecha(){
     var fecha = new Date();
     var hora = fecha.getHours();
@@ -12,7 +13,10 @@ function fecha(){
     if(segundos<10){
         segundos = "0"+segundos;
     }
-
-    document.querySelector(".hora").innerHTML = hora+":"+minutos+":"+segundos;
+    if (fechaCompleata != hora+":"+minutos+":"+segundos){
+        fechaCompleata = hora+":"+minutos+":"+segundos;
+        document.querySelector(".hora").innerHTML = fechaCompleata;
+    }
+    
 }
 setInterval(fecha,100);
